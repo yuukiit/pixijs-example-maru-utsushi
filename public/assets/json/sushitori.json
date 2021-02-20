@@ -1,0 +1,55 @@
+{
+	"frames": {
+		"nakatoro_white.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 600,
+				"h": 600
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 600
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 600
+			}
+		},
+		"tori.jpg": {
+			"frame": {
+				"x": 603,
+				"y": 1,
+				"w": 400,
+				"h": 400
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 400,
+				"h": 400
+			},
+			"sourceSize": {
+				"w": 400,
+				"h": 400
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1004,
+			"h": 602
+		},
+		"scale": "1"
+	}
+}
