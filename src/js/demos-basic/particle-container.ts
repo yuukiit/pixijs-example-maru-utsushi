@@ -10,6 +10,9 @@ type Dude = PIXI.Sprite & {
 export default () => {
   const app = new PIXI.Application();
   document.body.appendChild(app.view);
+
+  // PIXI.Container の速い版
+  // たくさんの Particle, Sprite を格納できる
   const sprites = new PIXI.ParticleContainer(10000, {
     // scale: true,
     position: true,
