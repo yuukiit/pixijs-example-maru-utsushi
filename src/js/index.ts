@@ -2,7 +2,7 @@ import container from './demos-basic/container'
 import transparentBackground from './demos-basic/transparent-background'
 import tinting from './demos-basic/tinting'
 import cacheAsBitmap from './demos-basic/cache-as-bitmap'
-// import particleContainer from './demos-basic/particle-container'
+import particleContainer from './demos-basic/particle-container'
 // import blendModes from './demos-basic/blend-modes'
 // import simplePlane from './demos-basic/simple-plane'
 
@@ -11,7 +11,7 @@ const pixiFunctions = {
   transparentBackground: () => transparentBackground(),
   tinting: () => tinting(),
   cacheAsBitmap: () => cacheAsBitmap(),
-  // particleContainer: () => particleContainer(),
+  particleContainer: () => particleContainer(),
   // blendModes: () => blendModes(),
   // simplePlane: () => simplePlane(),
 }
