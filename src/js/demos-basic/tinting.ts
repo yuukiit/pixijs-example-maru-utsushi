@@ -1,10 +1,6 @@
 import * as PIXI from 'pixi.js'
+import { Dude } from '../../../types/dude';
 
-type Dude = PIXI.Sprite & {
-  direction?: number;
-  turningSpeed?: number;
-  speed?: number;
-}
 export default () => {
   const app = new PIXI.Application();
   document.body.appendChild(app.view);
