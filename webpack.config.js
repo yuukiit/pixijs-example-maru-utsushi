@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/assets/js',
+    path: __dirname + '/public/assets/js',
   },
   resolve: {
     extensions: [
