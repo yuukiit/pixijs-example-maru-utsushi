@@ -4,7 +4,7 @@ import tinting from './demos-basic/tinting'
 import cacheAsBitmap from './demos-basic/cache-as-bitmap'
 import particleContainer from './demos-basic/particle-container'
 import blendModes from './demos-basic/blend-modes'
-// import simplePlane from './demos-basic/simple-plane'
+import simplePlane from './demos-basic/simple-plane'
 
 const pixiFunctions = {
   container: () => container(),
@@ -13,7 +13,7 @@ const pixiFunctions = {
   cacheAsBitmap: () => cacheAsBitmap(),
   particleContainer: () => particleContainer(),
   blendModes: () => blendModes(),
-  // simplePlane: () => simplePlane(),
+  simplePlane: () => simplePlane(),
 }
 
 window.addEventListener('load', () => {
