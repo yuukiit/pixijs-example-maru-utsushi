@@ -8,11 +8,16 @@
 ### Docker
 http://localhost:8080/
 
-**コンテナ作る**
+**コンテナ作る**  
+初回だけ
 ```zash
   docker run --name $(basename `pwd`) -d -p 8080:80 -v $(pwd)/public:/usr/share/nginx/html nginx:alpine
 ```
-**コンテナ止める**
+**Docker起動**
+```zash
+  docker start $(basename `pwd`)
+```
+**Docker止める**
 ```zash
   docker stop $(basename `pwd`)
 ```
