@@ -1,5 +1,4 @@
 import * as PIXI from 'pixi.js'
-import { Dude } from '../../../types/dude';
 
 type Reel = {
   container: PIXI.Container,
@@ -75,7 +74,15 @@ export default () => {
       const extra = Math.floor(Math.random() * 3);
       const target = r.position + 10 + index * 5 + extra;
       const time = 2500 + index * 600 + extra * 600;
-      tweenTo(r, 'position', target, time, backout(0.5), null, index === reels.length - 1 ? reelsComplete : null);
+      tweenTo(
+        r,
+        'position',
+        target,
+        time,
+        backout(0.5),
+        null,
+        index === reels.length - 1 ? reelsComplete : null
+      );
     }
   }
   const onAssetsLoaded = () => {
@@ -198,7 +205,10 @@ export default () => {
     .add('/assets/img/poko.jpg', '/assets/img/poko.jpg')
     .load(onAssetsLoaded);
 
+  // app.ticker はずっと走ってるぽい
+  // const tweening = [] に何かが push されたら for 文が走る
   app.ticker.add((delta) => {
+    console.log('俺は止まらねえ〜〜！');
     const now = Date.now();
     const remove = [];
     for (let index = 0; index < tweening.length; index++) {
