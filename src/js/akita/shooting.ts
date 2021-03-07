@@ -12,16 +12,29 @@ export default () => {
   const container = new PIXI.Container();
   stage.addChild(container);
 
+  const spinnerTori = (tori: PIXI.Sprite) => {
+    app.ticker.add((delta) => {
+      tori.rotation += 0.3
+    })
+  }
+
   const onAssetsLoaded = (
     loader: PIXI.Loader,
     resources: Partial<Record<string, PIXI.LoaderResource>>
   ) => {
     const tori = new PIXI.Sprite(resources.tori.texture);
-    stage.addChild(tori);
+    tori.anchor.set(0.5)
+    tori.x = app.screen.width / 2
+    tori.y = app.screen.height / 2
     const poko = new PIXI.Sprite(resources.poko.texture);
+    stage.addChild(tori);
     stage.addChild(poko);
+
+    tori.interactive = true;
+    tori.addListener('pointerdown', () => {
+      spinnerTori(tori);
+    })
     poko.interactive = true;
-    // poko.buttonMode = true;
     poko.addListener('pointerdown', () => {
       alert('グアアアア！！！！')
     })
