@@ -12,11 +12,18 @@ export default () => {
   const container = new PIXI.Container();
   stage.addChild(container);
 
-  const spinnerTori = (tori: PIXI.Sprite) => {
-    app.ticker.add((delta) => {
-      tori.rotation += 0.3
-    })
-  }
+  let toriIsSpin = false
+  const spinTexture = [];
+
+  app.ticker.add((delta) => {
+    for (let index = 0; index < spinTexture.length; index++) {
+      const element = spinTexture[index];
+      element.rotation += 0.3;
+      if (element.rotation > 100) {
+        element.rotation = 0;
+      }
+    }
+  })
 
   const onAssetsLoaded = (
     loader: PIXI.Loader,
@@ -26,13 +33,19 @@ export default () => {
     tori.anchor.set(0.5)
     tori.x = app.screen.width / 2
     tori.y = app.screen.height / 2
+
     const poko = new PIXI.Sprite(resources.poko.texture);
     stage.addChild(tori);
     stage.addChild(poko);
 
     tori.interactive = true;
     tori.addListener('pointerdown', () => {
-      spinnerTori(tori);
+      toriIsSpin = !toriIsSpin
+      if (toriIsSpin) {
+        spinTexture.push(tori);
+      } else {
+        spinTexture.splice(0, 1);
+      }
     })
     poko.interactive = true;
     poko.addListener('pointerdown', () => {
